@@ -50,7 +50,38 @@ function validateUsername() {
 
 }
 
-function
+function showError(errorElement, message) {
+    errorElement.textContent = message;
+    errorElement.style.display = 'block';
+}
+
+function clearError(errorElement) {
+    errorElement.textContent = '';
+    errorElement.style.display - 'none';
+}
+
+myForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const isUsernameValid = validateUsername();
+    const isEmailValid = validateEmail();
+    const isPasswordValid = varlidatePassword();
+    const isConfirmPasswordValid = validateConfirmPassword();
+
+
+    if (isUsernameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid) {
+        localStorage.setItem('savedUsername', usernameInput.value.trim());
+
+        statusMessage.textContent = 'AYYYE SEXY! Registration successful!';
+        statusMessage.style.color = 'red';
+        statusMessage.style.display = 'block';
+
+        console.log('Form submitted. Welcome Sexy MF');
+    } else {
+        
+    }
+})
+
+
 
 });
 
