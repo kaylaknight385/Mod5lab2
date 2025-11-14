@@ -9,6 +9,29 @@ const emailError = document.getElementById(emailError)
 const passError = document.getElementById(passwordError)
 const passConfirmError = document.getElementById(confirmPasswordError)
 
+const statusMessage = document.getElementById(statusMessage);
+
+const savedUsername = localStorage.getItem('savedUsername')
+if (savedUsername) {
+    usernameInput.value = savedUsername;
+    console.log("Loading Sexy User", savedUsername)
+}
+
+usernameInput.addEventListener('input', validateUsername);
+emailInput.addEventListener('input', validateEmail);
+passwordInput.addEventListener('input', varlidatePassword)
+confirmPasswordInput.addEventListener('input', validateConfirmPassword);
+
+
+function validateUsername() {
+    const username = usernameInput.value.trim();
+
+    if (usernameInput.validity.valueMissing) {
+        showError(usernameError, "Username is required");
+        return false;
+    } else if (usernameInput.validity.too{
+
+}
 
 
 
