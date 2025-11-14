@@ -1,21 +1,29 @@
-const myForm = document.getElementById(registrationForm);
-const nameInput = document.getElementById(username);
-const emailInput = document.getElementById(email);
-const passInput = document.getElementById(password);
-const passConfirm = document.getElementById(confirmPassword) 
+const myForm = document.getElementById('registrationForm');
+const nameInput = document.getElementById('username');
+const emailInput = document.getElementById('email');
+const passInput = document.getElementById('password');
+const passConfirm = document.getElementById('confirmPassword') 
 
-const nameError = document.getElementById(usernameError)
-const emailError = document.getElementById(emailError)
-const passError = document.getElementById(passwordError)
-const passConfirmError = document.getElementById(confirmPasswordError)
+const nameError = document.getElementById('usernameError')
+const emailError = document.getElementById('emailError')
+const passError = document.getElementById('passwordError')
+const passConfirmError = document.getElementById('confirmPasswordError')
 
-const statusMessage = document.getElementById(statusMessage);
+const statusMessage = document.getElementById('statusMessage');
 
 const savedUsername = localStorage.getItem('savedUsername')
 if (savedUsername) {
-    usernameInput.value = savedUsername;
+    nameInput.value = savedUsername;
     console.log("Loading Sexy User", savedUsername)
 }
+
+window.addEventListener('DOMContentLoaded', function () {
+    const savedUsername = localStorage.getItem('savedUsername')
+
+    if ('savedUsername') {
+        usernameInput.value = savedUsername;
+        console.log('Prefilled username', savedUsername);
+    }
 
 usernameInput.addEventListener('input', validateUsername);
 emailInput.addEventListener('input', validateEmail);
@@ -29,18 +37,20 @@ function validateUsername() {
     if (usernameInput.validity.valueMissing) {
         showError(usernameError, "Username is required");
         return false;
-    } else if (usernameInput.validity.too{
+    }
+     else if (usernameInput.validity.tooShort) {
+        showError(usernameError, "Aye bruh, say bruh...u need at least 3 characters")
+        return false;
+     }
+
+     else {
+        clearError(usernameError)
+        return true
+     }
 
 }
 
+function
 
-
-window.addEventListener(function () {
-    const savedInput = localStorage.getItem('username')
-
-    if ('savedInput') {
-        nameinput.value = savedInput;
-        console.log('Prefilled username', savedInput)
-    }
 });
 
