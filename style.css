@@ -39,24 +39,24 @@ h3 {
 .form-group input[type="text"],
 .form-group input[type="email"],
 .form-group input[type="password"] {
-  width: calc(100% - 22px); /* Account for padding and border */
+  width: calc(100% - 22px); /* account for padding and border */
   padding: 10px;
   border: 1px solid #830909e5;
   border-radius: 4px;
-  box-sizing: border-box; /* Makes width calculation easier */
+  box-sizing: border-box; /* makes width calculation easier */
 }
  
 .form-group input:invalid {
-  border-color: #e74c3c; /* Light red for invalid built-in states */
+  border-color: #e74c3c; /* light red for invalid built-in states */
 }
-/* You can add a .valid class if you want to style valid inputs too */
+
  
 .form-group .error-message {
   display: block;
-  color: #e74c3c; /* Red for error messages */
+  color: #e74c3c; /* red for error messages */
   font-size: 0.9em;
   margin-top: 5px;
-  min-height: 1em; /* Reserve space to prevent layout shifts */
+  min-height: 1em; /* reserve space to prevent layout shifts */
 }
  
 .form-group small {
